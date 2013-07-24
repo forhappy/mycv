@@ -1,0 +1,198 @@
+%% start of file `my-CV-2013.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+% possible options include font size ('10pt', '11pt' and '12pt'),
+% paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper',
+% 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+\documentclass[11pt,a4paper,roman]{moderncv} 
+
+% moderncv themes
+% style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvstyle{classic}
+
+% color options 'blue' (default), 'orange', 'green',
+% 'red', 'purple', 'grey' and 'black'
+% \moderncvcolor{orange}
+
+\usepackage{happycv}
+
+% to set the default font; use '\sfdefault' for the default sans serif font,
+% '\rmdefault' for the default roman one, or any tex font name
+% \renewcommand{\familydefault}{\sfdefault}
+
+% uncomment to suppress automatic page numbering for CVs longer than one page
+%\nopagenumbers{}
+
+% character encoding
+% if you are not using xelatex ou lualatex,
+% replace by the encoding you are using
+\usepackage{DejaVuSansMono}
+\usepackage[utf8]{inputenc}
+\usepackage{fontspec,indentfirst}
+\usepackage{xunicode}% provides unicode character macros
+\usepackage{xltxtra} % provides some fixes/extras
+
+% if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+% \usepackage{CJKutf8}
+\usepackage{tikz}
+\usepackage{footmisc}
+
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+\setmainfont{"宋体"}
+
+\renewcommand{\baselinestretch}{1.1}
+\newenvironment{tightitemize}
+{\begin{itemize}\setlength{\parskip}{0pt}}
+{\end{itemize}}
+% adjust the page margins
+\usepackage[scale=0.8]{geometry}
+
+% if you want to change the width of the column with the dates
+%\setlength{\hintscolumnwidth}{3cm}
+% for the 'classic' style, if you want to force the width allocated to
+% your name and avoid line breaks. be careful though, the length is normally
+% calculated to avoid any overlap with your personal info;
+% use this at your own typographical risks...
+%\setlength{\makecvtitlenamewidth}{10cm}
+
+\makeatletter
+\tikzset{
+    tl@startyear/.append style={
+        xshift=(0.5-\tl@startfraction)*\hintscolumnwidth,
+        anchor=base
+    }
+}
+\makeatother
+
+% quote, optional, remove / comment the line if not wanted.
+% \myquote{MAKE A LITTLE SPACE, MAKE A BETTER PLACE.}{Michael Jackson: <<Heal The World>>}
+
+% to show numerical labels in the bibliography (default is to show no labels);
+% only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+
+% CONSIDER REPLACING THE ABOVE BY THIS
+%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%-------------------------------------------------------------------------------
+%                                 content
+%-------------------------------------------------------------------------------
+\begin{document}
+% \begin{CJK*}{UTF8}{gbsn} % to typeset your resume in Chinese using CJK
+\makecvtitle
+
+\footnotetext[1]{http://www.videolan.org/vlc/index.html}
+
+\section{Education}
+% arguments 3 to 6 can be left empty
+% \cventry{2007--2011}{Degree}{Institution}{City}{\textit{Grade}}{Description}
+% \tlcventry{2007--2011}{Degree}{Institution}{City}{\textit{Grade}}{Description}
+\tlcventry{2011}{0}{Master}{Research Center of Web Data Science \& Engineering}{Institute of Computing Technology, Chinese Academy of Sciences}{Beijing}{}
+\tllabelcventry{2007}{2011}{2007-2011}{Bachelor}{Computer Science and Technology}{Huazhong University of Science and Technology}{Wuhan, top 5\%}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Skills}
+\cvdoubleitem{\textcolor[rgb]{0,0.33,0}{OS}}{Windows, Ubuntu, CentOS}{\textcolor[rgb]{0,0.33,0}{DB}}{MySQL, HBase, Memcached}
+\cvdoubleitem{\textcolor[rgb]{0,0.33,0}{Tools}}{Git, SVN, Vim, CMake, Eclipse}{\textcolor[rgb]{0,0.33,0}{Writing}}{LaTeX/Beamer, Word, PPT, Dia}
+\cvdoubleitem{\textcolor[rgb]{0,0.33,0}{Language}}{C/C++, Java, Python, Bash, Lua}{\textcolor[rgb]{0,0.33,0}{Toolchains}}{GCC, GDB, Binutils, LLVM/Clang}
+% \cvdoubleitem{Blogs}{\textcolor[rgb]{0.4,0.4,0.4}{\texttt{\httplink{www.cnblogs.com/haippy/}}}}{Github}{\textcolor[rgb]{0.4,0.4,0.4}{\texttt{\httplink{www://github.com/forhappy}}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Experiences}
+\tllabelcventry{2013}{0}{2013.4-now}{\textcolor[rgb]{0.5,0,0.5}{Designer and Developer}}{Social Graph Database Based On HBase}{\textcolor[rgb]{0.29,0,0.51}{Language:~\textsc{Java}}}{}{
+\begin{tightitemize}
+	\item \textcolor[rgb]{0.55,0,0}{Keywords}:~HBase, Social Graph
+	\item \textcolor[rgb]{0.55,0,0}{Introduction}:~We designed and developed a graph database based on HBase, which provides high scalability and stability for social graph.
+\end{tightitemize}}
+
+\tllabelcventry{2012}{2013}{2012.9-2013.4}{\textcolor[rgb]{0.5,0,0.5}{Main Developer}}{Development of Social Search Project}{\textcolor[rgb]{0.29,0,0.51}{Language:~\textsc{C++, Java}}}{}{
+\begin{tightitemize}
+	\item \textcolor[rgb]{0.55,0,0}{Keywords}:~Thrift, NLPbamboo, Neo4J, REST, Libevent, Zookeeper.
+  \item \textcolor[rgb]{0.55,0,0}{Introduction}:~We designed and developed a social graph search project, which can collect and display graph data from different channels.
+\end{tightitemize}}
+
+\tllabelcventry{2012}{2013}{2012.12-2013.01}{\textcolor[rgb]{0.5,0,0.5}{Main Developer}}{Code Porting of Video Address Parsing Library on Android Platform}{\textcolor[rgb]{0.29,0,0.51}{Language:~\textsc{Java}}}{}{
+\begin{tightitemize}
+	\item \textcolor[rgb]{0.55,0,0}{Keywords}:~HTTP, Protocol parsing, Firebug, Wireshark.
+	\item \textcolor[rgb]{0.55,0,0}{Introduction}:~Parsing the raw HTML webpage of a video on the web and get the downloadable URL of the original video, which can be opened as a network stream in the VLC\footnotemark[1] player.
+\end{tightitemize}}
+
+\tllabelcventry{2011}{2012}{2012.3-2012.6}{\textcolor[rgb]{0.5,0,0.5}{Designer and Developer}}{\textsc{HBase}~Data Migration Tool Design and Implementation}{\textcolor[rgb]{0.29,0,0.51}{Language:~\textsc{Java}}}{}{
+\begin{tightitemize}
+	\item \textcolor[rgb]{0.55,0,0}{Keywords}:~HBase, RDBMS(MySQL, Oracle), JDBC, SQL, Sqoop.
+	\item \textcolor[rgb]{0.55,0,0}{Introduction}:~Haiep was designed to migrate large data from RDMS to HBase.
+	\item Project Homepage:~\textcolor[rgb]{0.4,0.4,0.4}{\texttt{\httplink{forhappy.github.com/haiep/}}}
+\end{tightitemize}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\footnotetext[2]{2012 Aliyun World Developer Conference.}
+\footnotetext[3]{Institute of Computing Technology, Chinese Academy of Sciences.}
+\footnotetext[4]{National Qualification Certificate of Computer and Software Technology Proficiency.}
+
+\section{Personal Open Source Projects}
+% \tlcventry{2007--2011}{Degree}{Institution}{City}{\textit{Grade}}{Description}
+\tllabelcventry{2011}{0}{2011.9}{\texttt{\textcolor[rgb]{0.55,0,0}{cpy-leveldb}}}{\textsc{\textcolor[rgb]{0.29,0,0.51}{C\&Python}}}{1.5K SLOC}{\textcolor[rgb]{0.4,0.4,0.4}{\texttt{\httplink{www.github.com/forhappy/cpy-leveldb}}}}{
+\begin{tightitemize}
+	\item \textcolor[rgb]{0,0,0.37}{Introduction}:~\textsc{Google leveldb python binding, based on leveldb~C~API.}
+\end{tightitemize}}
+\tllabelcventry{2012}{0}{2012.9}{\texttt{\textcolor[rgb]{0.55,0,0}{ossc}}}{\textsc{\textcolor[rgb]{0.29,0,0.51}{C\&Shell}}}{18K SLOC}{\textcolor[rgb]{0.4,0.4,0.4}{\texttt{\httplink{www.github.com/forhappy/OSSC}}}}{
+\begin{tightitemize}
+	\item \textcolor[rgb]{0,0,0.37}{Introduction}:~\textsc{Aliyun OSS(Open Storage Service: OSS)~C~SDK. Best awards of the AWDC2012\footnotemark[2].}
+\end{tightitemize}}
+\tllabelcventry{2012}{0}{2012.12}{\texttt{\textcolor[rgb]{0.55,0,0}{reveldb}}}{\textsc{\textcolor[rgb]{0.29,0,0.51}{C\&Shell}}}{12K SLOC}{\textcolor[rgb]{0.4,0.4,0.4}{\texttt{\httplink{www.github.com/forhappy/reveldb}}}}{
+\begin{tightitemize}
+	\item \textcolor[rgb]{0,0,0.37}{Introduction}:~\textsc{A high performance key-value database server, supporting multiple storage engine(default storage engine is leveldb) and RESTful access protocol.}
+\end{tightitemize}}
+\tllabelcventry{2013}{0}{2013.1}{\texttt{\textcolor[rgb]{0.55,0,0}{neo4cpp}}}{\textsc{\textcolor[rgb]{0.29,0,0.51}{C++}}}{3K SLOC}{\textcolor[rgb]{0.4,0.4,0.4}{\texttt{\httplink{www.github.com/forhappy/neo4j-cpp-driver}}}}{
+\begin{tightitemize}
+	\item \textcolor[rgb]{0,0,0.37}{Introduction}:~\textsc{The open-source graph databse Neo4J C++ Client(There is no offical C++ client).}
+\end{tightitemize}}
+\tllabelcventry{2013}{0}{2013.3}{\texttt{\textcolor[rgb]{0.55,0,0}{uvbook}}}{\textrm{reStructuredText}}{}{\textcolor[rgb]{0.4,0.4,0.4}{\texttt{\httplink{www.github.com/forhappy/uvbook}}}}{
+\begin{tightitemize}
+	\item \textcolor[rgb]{0,0,0.37}{Introduction}:~\textsc{Libuv tutorial Chinese translation.}
+\end{tightitemize}}
+\tllabelcventry{2013}{0}{2013.4}{\texttt{\textcolor[rgb]{0.55,0,0}{zklua}}}{\textsc{\textcolor[rgb]{0.29,0,0.51}{C\&Lua}}}{3.5K SLOC}{\textcolor[rgb]{0.4,0.4,0.4}{\texttt{\httplink{www.github.com/forhappy/zklua}}}}{
+\begin{tightitemize}
+	\item \textcolor[rgb]{0,0,0.37}{Introduction}:~\textsc{Apache zookeeper lua binding.}
+\end{tightitemize}}
+\tllabelcventry{2013}{0}{2013.4}{\texttt{\textcolor[rgb]{0.55,0,0}{lua-snappy}}}{\textsc{\textcolor[rgb]{0.29,0,0.51}{C\&Lua}}}{200 SLOC}{\textcolor[rgb]{0.4,0.4,0.4}{\texttt{\httplink{https://github.com/forhappy/lua-snappy}}}}{
+\begin{tightitemize}
+	\item \textcolor[rgb]{0,0,0.37}{Introduction}:~\textsc{Lua binding of google's snappy compressor.}
+\end{tightitemize}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Awards and Certificates}
+\subsection{Awards}
+\cvitem{2012.12}{Tencent Outstanding Scholarship in ICT, CAS\footnotemark[3]}
+\cvitem{2012.11}{Best Practical Software Awards in AWDC2012\footnotemark[2]}
+\cvitem{2011.07}{Hubei Province Outstanding Graduation Thesis of Bachelor's Degree}
+\cvitem{2011.07}{HUST Outstanding Graduates}
+\cvitem{2010.11}{HUST First Class Scholarship}
+\cvitem{2009.11}{National Motivational Scholarship}
+\cvitem{2008.11}{National Motivational Scholarship}
+
+\subsection{Certificates}
+\cvitem{2010.10}{Qualification Certificate of System Analyst\footnotemark[4]}
+\cvitem{2010.03}{Qualification Certificate of Software Designer\footnotemark[4]}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% if you are typesetting your resume in Chinese using CJK;
+% the \clearpage is required for fancyhdr to work correctly with CJK,
+% though it kills the page numbering by making \lastpage undefined
+\clearpage
+% \end{CJK*}
+\end{document}
+
+%% end of file `my-CV-2013.tex'.
