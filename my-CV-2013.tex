@@ -35,6 +35,7 @@
 \usepackage{fontspec,indentfirst}
 \usepackage{xunicode}% provides unicode character macros
 \usepackage{xltxtra} % provides some fixes/extras
+\usepackage{wasysym}
 
 % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
 % \usepackage{CJKutf8}
@@ -104,70 +105,62 @@
 \makecvtitle
 
 % footnote in my moderncv.
-\footnotetext[1]{在项目中担任的角色, 下同.}
-\footnotetext[2]{个人简历采用~LaTeX~编写.}
+\footnotetext[1]{http://hbase.apache.org/}
+\footnotetext[2]{https://code.google.com/p/gperftools/}
+\footnotetext[3]{www.neo4j.org}
+\footnotetext[4]{http://zookeeper.apache.org/}
 
-\section{\li{基本信息}}
-\cvdoubleitem{姓~名:}{傅海平}{性~别:}{男}
-\cvdoubleitem{民~族:}{汉族}{政治面貌:}{中共党员}
 
 \section{\li{教育经历}}
-% arguments 3 to 6 can be left empty
-% \cventry{2007--2011}{Degree}{Institution}{City}{\textit{Grade}}{Description}
-% \tlcventry{2007--2011}{Degree}{Institution}{City}{\textit{Grade}}{Description}
-\tllabelcventry{2007}{2011}{2007-2011}{\hei{学士}}{计算机科学与技术}{华中科技大学}{武汉}{}
 \tlcventry{2011}{0}{\hei{硕士在读}}{网络数据科学与技术重点实验室}{中国科学院计算技术研究所}{北京}{}
-
-\section{\li{学士毕业论文}}
-\cvitem{论文题目}{\emph{基于生产环境下轻量级系统调用日志的错误重现工具}}
-\cvitem{指导老师}{蒋文斌}
+\tllabelcventry{2007}{2011}{2007-2011}{\hei{学士}}{计算机科学与技术}{华中科技大学}{武汉, 年级排名 5\% 以内}{}
 
 \section{\li{专业技能}}
-\cvdoubleitem{操作系统}{Ubuntu, Fedora, CentOS}{数据库}{MySQL, HBase, Memcached}
-\cvdoubleitem{编程语言}{C/C++, Java, Python, Bash, Lua}{文档编写}{LaTeX\footnotemark[2], Word, PPT, Dia}
-\cvdoubleitem{日常工具}{Git, GDB, Vim, CMake, Eclipse}{外语水平}{英语~6~级(549)}
-\cvdoubleitem{个人博客}{\textcolor[rgb]{0.4,0.4,0.4}{\texttt{\httplink{www.cnblogs.com/haippy/}}}}{\textsc{Github} 主页}{\textcolor[rgb]{0.4,0.4,0.4}{\texttt{\httplink{www.github.com/forhappy/}}}}
+\cvdoubleitem{操作系统:}{Ubuntu, Fedora, CentOS}{数据库:}{MySQL, HBase\footnotemark[1], Memcached}
+\cvdoubleitem{编程语言:}{C/C++, Java, Python, Bash, Lua}{工具链:}{GCC, GDB, Binutils, LLVM/Clang}
+\cvdoubleitem{代码工具:}{Vim, Git, SVN, CMake, Eclipse}{其他工具:}{Valgrind,SystemTap,Gperftools\footnotemark[2]}
+\cvdoubleitem{文档编写:}{LaTeX, Markdown, Word, PPT}{外语水平:}{英语~6~级(549)}
+%\cvdoubleitem{个人博客}{\textcolor[rgb]{0.4,0.4,0.4}{\texttt{\httplink{www.cnblogs.com/haippy/}}}}{\textsc{Github} 主页}{\textcolor[rgb]{0.4,0.4,0.4}{\texttt{\httplink{www.github.com/forhappy/}}}}
 
 \section{\li{硕士期间参与项目}}
-\tllabelcventry{2011}{2012}{2012.3-2012.6}{\hei{设计与实现人员}\footnotemark[1]}{\textsc{HBase}~数据导入工具的设计与实现}{编程语言:~\textsc{Java}}{}{
+\tllabelcventry{2012}{2013}{2012.9-2013.4}{\hei{网络图搜索项目开发}}{主要开发人员}{编程语言: Java}{}{
+\begin{tightitemize}
+	\item 关键技术:~HBase, Neo4J\footnotemark[3], RESTful API, Zookeeper\footnotemark[4].
+	\item 利用 HBase 保存图数据。
+	\item 利用 Neo4J 缓存 HBase 保存的图数据，加速关系的计算。
+	\item 为前台用户设计了一套 RESTful 接口。
+\end{tightitemize}}
+\tllabelcventry{2012}{2013}{2012.9-2013.4}{\hei{某网络搜索项目维护与二期开发}}{主要开发人员}{编程语言:~C++, Java}{}{
+\begin{tightitemize}
+	\item 关键技术:~Thrift, NLPbamboo, Neo4J, RESTful API, Libevent, Zookeeper.
+	\item 利用 thrift 封装了 nlpbamboo 接口, 为其他模块提供实体识别功能.
+	\item 编写和更新了 Neo4J 图数据库的数据入库程序与查询接口.
+	\item 实现了一个简单的微博寻人的工具,  通过微博搜索页面 s.weibo.com 爬取微博用户的个人信息.
+\end{tightitemize}}
+\tllabelcventry{2012}{0}{2012.12-至今}{\hei{某新媒体项目的网络视频地址解析库~\textsc{Android}~平台移植}}{主要开发人员}{编程语言:~\textsc{Java}}{}{
+\begin{tightitemize}
+	\item 关键技术:~HTTP, 协议分析.
+	\item 基本介绍:~通过视频的原始网页地址(如优酷视频的播放地址)来解析得到该页面的原始视频的播放地址, 获取的地址可以直接在 VLC 视频播放器中播放.
+\end{tightitemize}}
+\tllabelcventry{2011}{2012}{2012.3-2012.6}{\hei{\textsc{HBase}~数据导入工具的设计与实现}}{设计与实现人员}{编程语言:~\textsc{Java}}{}{
 \begin{tightitemize}
 	\item 关键技术:~HBase, RDBMS(MySQL, Oracle), JDBC, SQL, Sqoop.
 	\item 基本介绍:~Haiep 是一个与 sqoop 类似的用于从关系数据库向 HBase 导入数据的工具, 除了数据导入以外, 还可以导入关系数据库表的元信息, 该工具曾在实验室内部的多个项目中使用.
 	\item 项目主页:~\textcolor[rgb]{0.4,0.4,0.4}{\texttt{\httplink{forhappy.github.com/haiep/}}}
 \end{tightitemize}}
-\tllabelcventry{2011}{2012}{2012.8-2012.9}{\hei{项目维护人员}}{基于~\textsc{WebService}~某项目接口维护}{编程语言:~C++}{}{
-\begin{tightitemize}
-	\item 关键技术:~WebService, gSOAP.
-	\item 基本介绍:~某 webservice 平台接口的维护与升级, 通过 gSOAP 生成客户端代码框架, 然后实现相关的接口.
-\end{tightitemize}}
-\tllabelcventry{2012}{2013}{2012.9-2013.4}{\hei{主要开发人员}}{某网络搜索项目维护与二期开发}{编程语言:~C++, Java}{}{
-\begin{tightitemize}
-	\item 关键技术:~Thrift, NLPbamboo, Neo4J, REST, Libevent, Zookeeper.
-	\item 利用 thrift 封装了 nlpbamboo 接口, 为其他模块提供实体识别功能.
-	\item 编写和更新了 Neo4J 图数据库的数据入库程序与查询接口.
-	\item 设计并实现了搜索任务请求和结果处理的模块, 该模块可分布式部署, 服务器端与客户端通过 REST 接口进行通信, 服务器端采用 Zookeeper 容错.
-	\item 实现了一个简单的微博寻人的工具,  通过微博搜索页面 s.weibo.com 爬取微博用户的个人信息.
-\end{tightitemize}}
-\tllabelcventry{2012}{0}{2012.12-至今}{\hei{主要开发人员}}{某新媒体项目的网络视频地址解析库~\textsc{Android}~平台移植}{编程语言:~\textsc{Java}}{}{
-\begin{tightitemize}
-	\item 关键技术:~HTTP, 协议分析.
-	\item 基本介绍:~通过视频的原始网页地址(如优酷视频的播放地址)来解析得到该页面的原始视频的播放地址, 获取的地址可以直接在 VLC 视频播放器中播放.
-\end{tightitemize}}
 
-\footnotetext[4]{有效代码, 下同.}
-\footnotetext[5]{截至~2012~年~4~月~3~日.}
+\footnotetext[5]{有效代码, 下同.}
 \footnotetext[6]{计算机技术与软件专业技术资格（水平）考试}
-
 
 \section{\li{个人开源项目}}
 % \tlcventry{2007--2011}{Degree}{Institution}{City}{\textit{Grade}}{Description}
-\tllabelcventry{2011}{0}{2011.9}{\texttt{\textcolor[rgb]{0.55,0,0}{cpy-leveldb}}}{\textsc{C\&Python}}{1.5K SLOC\footnotemark[4]}{\textcolor[rgb]{0.4,0.4,0.4}{\texttt{\httplink{www.github.com/forhappy/cpy-leveldb}}}\footnotemark[5]}{
+\tllabelcventry{2011}{0}{2011.9}{\texttt{\textcolor[rgb]{0.55,0,0}{cpy-leveldb}}}{\textsc{C\&Python}}{1.5K SLOC\footnotemark[5]}{\textcolor[rgb]{0.4,0.4,0.4}{\texttt{\httplink{www.github.com/forhappy/cpy-leveldb}}}}{
 \begin{tightitemize}
 	\item 基本介绍:~\textsc{Google Leveldb}~的~\textsc{Python}~绑定, 基于~\textsc{Leveldb~C~API}.
 \end{tightitemize}}
 \tllabelcventry{2012}{0}{2012.9}{\texttt{\textcolor[rgb]{0.55,0,0}{ossc}}}{\textsc{C\&Shell}}{18K SLOC}{\textcolor[rgb]{0.4,0.4,0.4}{\texttt{\httplink{www.github.com/forhappy/OSSC}}}}{
 \begin{tightitemize}
-	\item 基本介绍:~阿里云开放存储服务(Open Storage Service: OSS)~C~SDK, 首届阿里云开发者大赛获奖作品(最佳实用奖: 奖金~5~万人民币整.)
+	\item 基本介绍:~阿里云开放存储服务(Open Storage Service: OSS)~C~SDK, 首届阿里云开发者大赛获奖作品(最佳实用奖: 奖金~5~万人民币整, 合作者:~王维.)
 \end{tightitemize}}
 \tllabelcventry{2012}{0}{2012.12}{\texttt{\textcolor[rgb]{0.55,0,0}{reveldb}}}{\textsc{C\&Shell}}{12K SLOC}{\textcolor[rgb]{0.4,0.4,0.4}{\texttt{\httplink{www.github.com/forhappy/reveldb}}}}{
 \begin{tightitemize}
@@ -183,20 +176,29 @@
 \end{tightitemize}}
 \tllabelcventry{2013}{0}{2013.4}{\texttt{\textcolor[rgb]{0.55,0,0}{zklua}}}{\textsc{C\&Lua}}{3.5K SLOC}{\textcolor[rgb]{0.4,0.4,0.4}{\texttt{\httplink{www.github.com/forhappy/zklua}}}}{
 \begin{tightitemize}
-	\item 基本介绍:~\textsc{Apache Zookeeper} 的 Lua 绑定, 由于接口还未稳定, zklua 的源码还没有提交至 github 仓库中.\footnotemark[5].
+	\item 基本介绍:~\textsc{Apache Zookeeper} 的 Lua 客户端, 基于 \textsc{Zooeeper C API}.
+\end{tightitemize}}
+\tllabelcventry{2013}{0}{2013.4}{\texttt{\textcolor[rgb]{0.55,0,0}{lua-snappy}}}{\textsc{C\&Lua}}{200 SLOC}{\textcolor[rgb]{0.4,0.4,0.4}{\texttt{\httplink{https://github.com/forhappy/lua-snappy}}}}{
+\begin{tightitemize}
+	\item \textcolor[rgb]{0,0,0.37}{Introduction}:~\textsc{Google 压缩库 Snappy 的 Lua 接口绑定.}
 \end{tightitemize}}
 
-\section{\li{本科及硕士阶段所获主要奖项及证书}}
-\cvitem{2008.11}{\kai{国家励志奖学金}}
-\cvitem{2009.11}{\kai{国家励志奖学金}}
-\cvitem{2010.03}{\kai{软件设计师(中级)\footnotemark[6]}}
-\cvitem{2010.10}{\kai{系统分析师(高级)\footnotemark[6]}}
-\cvitem{2010.11}{\kai{华中科技大学学习优秀奖学金}}
+\section{\li{本科及硕士阶段所获主要奖项和证书}}
+\subsection{主要奖项}
+\cvitem{2012.12}{\kai{中科院计算技术研究所腾讯优秀奖学金}}
+\cvitem{2012.11}{\kai{首届阿里云开发者大赛最佳实用奖}}
 \cvitem{2011.07}{\kai{华中科技大学优秀毕业生}}
 \cvitem{2011.07}{\kai{湖北省学士学位优秀毕业论文}}
-\cvitem{2012.11}{\kai{首届阿里云开发者大赛最佳实用奖}}
-\cvitem{2012.12}{\kai{中科院计算技术研究所腾讯优秀奖学金}}
+\cvitem{2010.11}{\kai{华中科技大学学习优秀奖学金}}
+\cvitem{2009.11}{\kai{国家励志奖学金}}
+\cvitem{2008.11}{\kai{国家励志奖学金}}
 
+\subsection{证书}
+\cvitem{2010.10}{\kai{系统分析师(高级)\footnotemark[6]}}
+\cvitem{2010.03}{\kai{软件设计师(中级)\footnotemark[6]}}
+
+\section{\li{自我评价}}
+\cvitem{}{{为人随和, 喜欢跑步, 登山, 健身, 热爱代码与数学\smiley{}}}
 
 % if you are typesetting your resume in Chinese using CJK;
 % the \clearpage is required for fancyhdr to work correctly with CJK,
